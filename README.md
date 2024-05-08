@@ -15,8 +15,46 @@ This web application using the Azure infrastructure to securely upload media to 
 - Azure Functions API: Used to generate the SAS token based out of the filename
 - Azure Blob Storage: Used to store the uploaded files
 
-Steps
+**Steps**
+1. Fork sample application repository with GitHub --> https://github.com/Azure-Samples/azure-typescript-e2e-apps/fork
 
-Conclusion This project was enjoyable and provided a learning experience in Azure's Manage Identities and Compliance domain. It did not involve any coding apart from understanding the JSON format.
+2. Configure dev environment
+- IDE: Visual Studio Code
+- Extensions: Dev Container (Used to containerize the dev environments)
 
-Reference: [https://github.com/madebygps/projects/blob/main/az-104/onboarder.md](https://learn.microsoft.com/en-us/azure/developer/javascript/tutorial/browser-file-upload-azure-storage-blob?tabs=github-codespaces)
+3. Install dependencies
+- Run NPM install in the APP and API folders
+- Node Package Manager: a library and registry for JavaScript software packages
+
+4. Create Azure Storage resource with Visual Studio extension
+- In Visual Studio Code, navigate to the Azure Extension to create the Azure Storage
+
+5. Configure CORS
+- The browser is used to upload the media file and CORS configuration is required to allow cross-origin requests.
+
+6. Restrict Access to the Storage
+- Only want authenticated users to access
+
+7. Create upload container
+- This container will be used to store the uploaded files.
+
+8. Grant yourself Blob Data access
+
+9. Get Storage resource credentials
+- The Storage resource credentials are used in the Azure Functions API app to connect to the Storage resource.
+
+10. Run the API app
+- Run the Functions App to make sure it works correctly before deploying it to Azure.
+
+11. Configure and run the client app
+
+12. Commit code changes
+
+13. Deploy static web app to Azure
+
+**Conclusion**
+I found working on this project enjoyable as it allowed me to familiarize myself with Visual Studio Code on a Macbook. Through this project, I gained insight into creating a storage container and setting it up for access. A highlight for me was deploying a static web app, enabling direct media file uploads to a blob container. 
+
+However, the most challenging aspect was configuring the Access Keys for the Storage resource credentials. This proved challenging as I had to grasp the process of obtaining both the Azure Account Key and the Azure Storage account connection string.
+
+Reference: https://learn.microsoft.com/en-us/azure/developer/javascript/tutorial/browser-file-upload-azure-storage-blob?tabs=github-codespaces
